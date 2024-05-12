@@ -5,9 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fight Club - Timer</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
 <body>
-    
+    <button
+    class="theme-toggle" 
+  id="btn-tema" 
+  title="Toggles light & dark" 
+  aria-label="auto" 
+  aria-live="polite"
+    >
+    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <g class="sun-beams" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </g>
+          <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+          </mask>
+      </svg>
+</button>
+<div class="definicao">
+    <table>
+      <tbody>
+        <tr>
+          <th class="esquerda">Controle</th>
+          <th>Definir</th>
+          <th class="direita">Parâmetro</th>
+        </tr>
+        <tr title="Frequência sonora">
+          <td class="esquerda"><i class="bi bi-soundwave icons-control"></i></td>
+          <td><input type="range" id="fIn" min="40" max="6000" oninput="show()" onchange="onChange()"/></td>
+          <td class="direita"><span id="fOut"></span></td>
+        </tr>
+        <tr title="Tipo de som">
+          <td class="esquerda"><i class="bi bi-music-note-list icons-control"></i></td>
+          <td><input type="range" id="tIn" min="0" max="3" oninput="show()" onchange="onChange()" /></td>
+          <td class="direita"><span id="tOut"></span></td>
+        </tr>
+        <tr title="Volume">
+          <td  class="esquerda"><i id="icovol" class="bi bi-volume-down icons-control"></i></td>
+          <td><input type="range" id="vIn" min="0" max="100" oninput="show()" onchange="onChange()" /></td>
+          <td class="direita"><span id="vOut" ></span></td>
+        </tr>
+        <tr title="Tempo em milesegundos, exemplo: 1 segundo = 1000ms">
+          <td class="esquerda"><i class="bi bi-stopwatch icons-control"></i></td>
+          <td><input type="range" id="dIn" min="1" max="5000" oninput="show()" onchange="onChange()" /></td>
+          <td class="direita"><span id="dOut"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td ><button class="play" onclick='beep();'><i class="bi bi-play-fill"></i></button></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
