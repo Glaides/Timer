@@ -17,7 +17,7 @@
 
 @media(prefers-color-scheme: dark){
     :root{
-        --cor-fundo: var(--preto-fundo);
+        --cor-fundo: var(--preto-pri-plano);
         --cor-texto: var(--preto-text-pri);
     }
 }
@@ -32,4 +32,19 @@
 *{
     background: var(--cor-fundo);
     color: var(--cor-texto);
+}
+
+table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: auto;
+    background: linear-gradient(145deg, #2e2d2d, #212121);
+    color: var(--cor-texto);
+    border-radius: 10px;
+    padding: 15px 5px;
+    margin: 5px;
+    box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+    inset 5px 5px 10px var(--cor-fundo), inset -5px -5px 10px var(--cor-fundo);
 }
